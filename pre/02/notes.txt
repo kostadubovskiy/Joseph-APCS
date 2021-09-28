@@ -1,0 +1,10 @@
+Learned about the most basic data types in java: integers (int), doubles (double), and strings (str).
+
+In order to define a variable, you must first declare it, and then define it:
+
+int intval;
+
+intval = 5;
+
+This can be done on one line: 
+int intval = 5;
