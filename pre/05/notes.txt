@@ -1,0 +1,6 @@
+Learned about a new type of java methods; value methods, which instead of returning a void, will return a specific data type (such as an int, double, or str).
+
+This can be done by changing the "void" in previous functions (the RETURNTYPE) to "int", "double", "str", etc.
+
+The body of these methods, no matter the return type, can look very similar, and it should be known that functions can call other functions within them (and the order in which
+they appear on your file doesn't affect that).

@@ -1,0 +1,10 @@
+Learned about void methods, i.e. about java "functions" (called methods) that are not based on any input variables; somewhat similar to a python script that would
+print a given string.
+
+The syntax of any method in java is as follows:
+
+public static RETURNTYPE NAME(ARGUMENTS){
+ BODY
+}
+
+Where RETURNTYPE refers to what is returned, NAME is the name of the function, and the ARGUMENTS are your inputs (whose type must be declared). 

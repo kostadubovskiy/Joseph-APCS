@@ -1,0 +1,6 @@
+Made first java files, using atom to store them and the Windows Powershell to run and test them.
+
+After creating the file in atom and saving it, I opened powershell and opened my directory; then I wrote javac Hello.java, which compiled the atom file as java code, then
+ran java Hello in order to see what the file would return after running.
+
+Mainly everything ran smoothly this assignment, other than me realizing that the desktop with my APCS file that I was trying to access was in the wrong place :p.

@@ -1,0 +1,30 @@
+Only learned the syntax of if statements, and if else and else statements.
+We paste the proper syntax here for brevity.
+
+ Example A - simple if
+  if (boolean)
+    statement;
+
+ Example B - if with compound statement
+  if (boolean){
+      statement1;
+      statement2;
+      ...;
+      statementn;
+  }
+
+ Example C - if with else
+  if (boolean){
+      statements;
+  } else {
+      statements;
+  }
+
+ Example D - if with else chain
+  if (boolean1) {
+      statements;
+  } else if (boolean2) {
+      statements;
+  } else {
+      statements;
+  }
