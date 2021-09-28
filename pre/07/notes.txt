@@ -1,0 +1,21 @@
+Arrays in Java were probably the most confusing part of the summer assignment, as I kept running into syntax issues and was confused where I was going wrong.
+
+Arrays can be thought of as "ordered sequences" (with possible repeating values), where the value of the nth term in the sequence corresponds to the nth term in the array.
+
+You can declare an integer array using
+int[] a
+a = new int[5];
+Where a is the name of your list, and the array has 5 more entries than before (which must be defined).
+
+To define an element of an array, we can write
+a[3] = 5;
+which gives the element with index 3 a value of 5.
+
+To print an array, we can use this code:
+public static void printArray(int[] a) {
+    System.out.print("{" + a[0]);
+    for (int i = 1; i < a.length; i++) {
+        System.out.print(", " + a[i]);
+    }
+    System.out.println("}");
+}
