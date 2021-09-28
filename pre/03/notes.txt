@@ -7,4 +7,4 @@ public static RETURNTYPE NAME(ARGUMENTS){
  BODY
 }
 
-Where RETURNTYPE refers to what is returned, and the arguments are your inputs. 
+Where RETURNTYPE refers to what is returned, NAME is the name of the function, and the ARGUMENTS are your inputs (whose type must be declared). 
