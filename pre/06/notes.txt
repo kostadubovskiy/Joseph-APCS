@@ -1,0 +1,12 @@
+Learned about while loops and for loops in java; the while loop syntax in java bears similarity to the python while loop:
+
+while (boolean) {
+  statemnts;
+}
+
+The for loop is different than python, but is just a way of writing a while loop; INITIALIZATION is the initial condition on the variable you are looping through, TEST refers
+to stopping the loop (when the test fails, the loop stops), and INCREMENT refers to what happens to the initialized variable each time we run the loop.
+
+for (INITIALIZATION, TEST, INCREMENT) {
+  do stuff;
+}
