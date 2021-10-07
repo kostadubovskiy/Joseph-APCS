@@ -1,8 +1,8 @@
 /*
-Joseph, Kosta
+Joseph, Kosta, Po, Davie
 APCS
 HW12 -- On Elder Individuality and the Elimination of Radio Fuzz
-2021-10-04
+2021-10-05
 */
 
 public class BigSib {
