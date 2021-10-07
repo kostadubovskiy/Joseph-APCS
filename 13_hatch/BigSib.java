@@ -11,7 +11,6 @@ public class BigSib {
 	}
 
 	public static void main (String[] args){
-		System.out.println(greet("Flam"));
 	}
 
 	public static String HelloMsg;
