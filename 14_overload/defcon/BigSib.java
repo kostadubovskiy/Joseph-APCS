@@ -1,4 +1,10 @@
+/*
+Joseph, Kosta, Anjini, Po, Davie
+APCS
+HW13 -- Where do Big Sibs Come From?
+2021-10-06
 */
+
 
 public class BigSib {
         public BigSib(String k) {
