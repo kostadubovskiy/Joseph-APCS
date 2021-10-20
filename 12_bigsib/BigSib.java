@@ -6,6 +6,9 @@ HW12 -- On Elder Individuality and the Elimination of Radio Fuzz
 */
 
 public class BigSib {
+	public void BigSib() {
+	
+
 	public static void main (String[] args){
 		System.out.println(greet("Flam"));
 	}
