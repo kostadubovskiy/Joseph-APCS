@@ -146,7 +146,6 @@ public class Pig{
 
 
     public static String capitalize( String w ) {
-
         w = w.toLowerCase();
         w = w.substring(0, 1).toUpperCase()+w.substring(1);
         return w;
@@ -219,7 +218,7 @@ public class Pig{
             if (i == 0) {
             	a = capitalize(engToPigPunct(s.substring(0,i))) + " " + translateSentence(s.substring(i+1));
             } else {
-            	a = engToPigPunct(s.substring(0,i)) + " " + translateSentence(s.substring(i+1));
+            	a = capitalize(engToPigPunct(s.substring(0,i))) + " " + translateSentence(s.substring(i+1));
             }
             i = s.length();
           }
@@ -229,7 +228,7 @@ public class Pig{
         }
       }
       else {
-        a = engToPigPunct(s);
+        a = capitalize(engToPigPunct(s));
       }
       return a;
     }
