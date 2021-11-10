@@ -210,18 +210,22 @@ public class Pig{
         return res;
     }
 
-  	public static String translateSentence( String s) {
+    public static String translateSentence( String s) {
       int i = 0;
       String a = "";
       if (hasA(s, " ")) {
-      	while (i < s.length()) {
+        while (i < s.length()) {
           if (s.substring(i,i+1).equals(" ")) {
-            a = engToPigPunct(s.substring(0,i)) + " " + translateSentence(s.substring(i+1));
-	    i = s.length();
+            if (i == 0) {
+            	a = capitalize(engToPigPunct(s.substring(0,i))) + " " + translateSentence(s.substring(i+1));
+            } else {
+            	a = engToPigPunct(s.substring(0,i)) + " " + translateSentence(s.substring(i+1));
+            }
+            i = s.length();
           }
-	  else {
-		i = i + 1;
-	  }
+          else {
+                i = i + 1;
+          }
         }
       }
       else {
