@@ -1,0 +1,24 @@
+Mangos
+Andrew Piatetsky, Lindsey Phung, Joseph Othman
+09/21
+Period 7
+
+0.
+The base of a number in base-x shows 1 greater than the maximum for any given place value (I think digit would work better here. To convert from any number in base x to base 10, one must multiply the place value by the corresponding base raised to a certain power (its num value). The certain power for the right most digit is 0, and for all other digits the power is just +1 moving to the left.
+
+1.
+ Binary is a base 2 system. Its useful because it only has 2 possible values for any place value, either 1 or 0 (on or off). This is useful because a numerical input number can be easily converted to base 2 which can represent a series of ons and offs.
+
+
+2.
+This is how you convert from base 2 to base 10 or the decimal system. First multiply right most digit by 2^0, then the next value by 2^1, and then continue until there are no more digits to the left.
+
+
+3.
+The first step is to subtract the largest power of two possible (while keeping the difference positive). Then you try x-1 until x is 0, so in this case we started with 2^3, because 8>9, and 2^4=16>9 so we started with that. Then we tried 2^2 which led to an answer < 0, afterwards we tried 2^1, which still resulted in a number <0. finally we got to 2^0, which led to an answer equal to 0.
+
+Now to actually convert. Each valid subtraction corresponds to a 1, while tthe non successful ones correspond to a zero.
+
+We them concatenate the numbers from left to right starting with the greatest power of 2 and successively working our way down to 2^0.
+
+So we ended up with 1001_2 which is equal to 9_10.
