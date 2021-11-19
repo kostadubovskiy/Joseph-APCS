@@ -1,0 +1,21 @@
+HW 36: Debugging Notes
+
+Strategies for Compile Time Errors:
+⁃ Fix errors 1 at a time
+⁃ If the error message makes no sense, it at least tells you where to look. Look around the specified line(s) to find potential errors to fix.
+⁃ Check syntax, including but not limited to parentheses, semi colons, quotes, return types, static vs nonstatic, etc.
+⁃ Make sure you are looking for the error in the right place.
+⁃ Debugging by bisection; similar to binary search, try finding the error by dividing code into two halves and getting rid of one and compiling. This will narrow your search for the error.
+⁃ Do not completely listen to the compiler. Many of the error messages are unreliable.
+
+Run time errors:
+⁃ For hanging (programs that do nothing after compiling for a long time), loops or recursions for no ends is often the root of the issue.
+⁃ Utilizing print statements to see where errors may occur is a good idea.
+⁃ Exceptions are someone self explanatory based on the name given to it.
+⁃ Make sure to keep print statements and code clean, so that you don’t confuse yourself while debugging.
+
+Logic Errors:
+⁃ Break complex expressions into smaller, easier to read expressions.
+⁃ Use temporary variables, returning different ones along the way so you can make sure that your output at each step is what is desired.
+⁃ Calm down and go for a walk.
+⁃ Get help when necessary.
