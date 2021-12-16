@@ -3,6 +3,28 @@
    Binary search on array of Comparables
 **/
 
+/***
+DISCO:
+- Binary search is a much more efficient algorithm for searching whether or not an element is
+in a given array, and returning its index.
+- Binary search compares the target to the value at the "average" index of the current search
+space, changing the bounds of the search space as necessary to limit the search.
+- While linear search would require at most (hi-lo+1) steps to find an element, binary search
+only requires the floor of log base 2 of the same expression, plus 1 steps in a worst case
+scenario to find an element.
+- The log comes from continuously dividing the search space by 2, instead of subtracting 1.
+Dividing by 2 is the "best" because you will always have 2 search spaces that sum to a "whole"
+serach space (whatever the search space size was at the start of this guess), so the 2 new search
+spaces must sum to the whole. This implies that one of the search spaces is at least half the size
+of the old search space, and binary search allows this "equality" to occur.
+
+QCC:
+- How do we rigorously compare to algorithms in terms of speed; how can we say an algo is truly
+more efficient than another one?
+- Is binary search the fastest searching algorithm? If so, how can it be shown that no others are
+faster?
+
+***/
 public class BinSearch
 {
 
@@ -16,8 +38,8 @@ public class BinSearch
   {
     //uncomment exactly 1 of the 2 stmts below:
 
-    return binSearchIter( a, target, 0, a.length-1 );
-    //return binSearchRec( a, target, 0, a.length-1 );
+    // return binSearchIter( a, target, 0, a.length-1 );
+    return binSearchRec( a, target, 0, a.length-1 );
   }
 
 
@@ -30,7 +52,28 @@ public class BinSearch
 
     int m = (lo + hi) / 2; //init mid pos var
 
+    // run until lo and hi cross
+    // if they do, return tPos (-1)
+    if (lo > hi) {
+      return tPos;
+    }
 
+    // target found
+    if (a[m].compareTo(target) == 0) {
+      tPos = m;
+    } 
+
+    // value at mid index higher than target
+    else if (a[m].compareTo(target) > 0) {
+      hi = m - 1;
+      return binSearchRec(a, target, lo, hi);
+    }
+
+    // value at mid index lower than target
+    else if (a[m].compareTo(target) < 0) {
+      lo = m + 1;
+      return binSearchRec(a, target, lo, hi);
+    }
 
     return tPos;
   }//end binSearchRec
@@ -44,22 +87,21 @@ public class BinSearch
     int tPos = -1; //init return var to flag value -1
     int m = (lo + hi) / 2; //init mid pos var
 
-    while(lo < hi) { // run until lo & hi cross
+    while(lo <= hi) { // run until lo & hi cross
 
       //update mid pos var
       m = (lo + hi) / 2;
       // target found
-      if (a[m] == target) {
+      if (a[m].compareTo(target) == 0) {
         tPos = m;
         break;
       }
-      // USE COMPARE TO
       // value at mid index higher than target
-      else if (a[m] > target) {
+      else if (a[m].compareTo(target) > 0) {
         hi = m - 1;
       }
       // value at mid index lower than target
-      else {
+      else if (a[m].compareTo(target) < 0) {
         lo = m + 1;
       }
 
@@ -123,8 +165,8 @@ public class BinSearch
     iArr3[i] = i * 2;
     }
 
-    printArray( iArr3 );
-    System.out.println( "iArr3 sorted? -- " + isSorted(iArr2) );
+    //printArray( iArr3 );
+    //System.out.println( "iArr3 sorted? -- " + isSorted(iArr3) );
 
     //search for 6 in array
     System.out.println( binSearch(iArr2,2) );
@@ -132,7 +174,7 @@ public class BinSearch
     System.out.println( binSearch(iArr2,6) );
     System.out.println( binSearch(iArr2,8) );
     System.out.println( binSearch(iArr2,13) );
-    System.out.println( binSearch(iArr2,42) );
+    System.out.println( binSearch(iArr2,42) ); 
 
     //search for 43 in array
     System.out.println( binSearch(iArr2,43) );
