@@ -1,8 +1,8 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd0
+// Fred Gang: Joseph Othman, Michael Kamela, Lawrence Joa
+// APCS pd07
 // HW52 -- implementing selection sort
 // 2022-01-05w
-// time spent:  hrs
+// time spent:  0.5hrs
 
 /******************************
  *   class SelectionSort -- implements SelectionSort algorithm
