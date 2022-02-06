@@ -1,15 +1,13 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd0
+// PAUDUO -- Joseph Othman and Lindsay Phung
+// APCS pd7
 // L05 -- pulling it together
-// 2022-02-03r
-// time spent:  hrs
+// 2022-02-07
+// time spent: 0.5 hr
 
 
 /**
    An AP-style question, for practice...
-
    GOAL: Write the StatPrinter class below.
-
    WHAT YOU NEED TO KNOW:
    The StatPrinter Object receives an
    ArrayList of nonnegative integers, then builds a frequency ArrayList in which
@@ -18,19 +16,16 @@
    list would be [0,1,2,2,0,1]. This is read as 0 zeroes, 1 one, 2 twos,
    2 threes, 0 fours, 1 five. The size of the frequency list is the equal to
    the maximum value of the data.
-
    A capability of the class is to calculate local modes from the frequency
    list. A local mode is a value that is greater than the value at index-1
    and greater than the value at index+1. A local mode is never at the end
    points of the list. For example, if the frequency list is [1,2,1,4,2,3,5]
    then the local modes are 2 and 4.
-
    This class is also capable of printing a histogram of the frequencies, using
    '*'s to indicate a frequency amount. To print a histogram, the user specifies
    the longest sequence of '*'s used and then all other values are printed in
    proportion to this value. For example, if longest bar is 10 and the frequency
    list is [1,2,1,4,2,3,5] then the histogram printed looks like this:
-
    0 : **
    1 : ****
    2 : **
@@ -38,9 +33,7 @@
    4 : ****
    5 : ******
    6 : **********
-
    For each method, state run time efficiency using Big O notation.
-
    TIPS FOR AWESOME:
    * Keys to Success were so named (by Thinkeren) for a reason.
    * Look over all fxns, think a bit, decide which to tackle first.
@@ -55,9 +48,10 @@ import java.util.ArrayList;
 public class StatPrinter
 {
   // instance variable for frequencies of each integer in input ArrayList
-  private ArrayList <Integer> _frequency;
+  private ArrayList <Integer> _frequency = new ArrayList();
 
 
+  // BIG O CLASSIFICATION: O(n)
   //*************** QUESTION 02 **************************
   //precond:  data.size() > 0, each entry b/t 0,100 inclusive
   //postcond: _frequency.size() set to max(data) + 1
@@ -65,7 +59,7 @@ public class StatPrinter
   //eg, for data [2,3,2,5,2,3]
   //  _frequency would be [0,0,3,2,0,1]
   public StatPrinter( ArrayList <Integer> data )
-  {
+  {/* YOUR IMPLEMENTATION HERE */
     /* YOUR IMPLEMENTATION HERE */
     for(int i = 0; i <= max(data); i++) {
       _frequency.add(0);
@@ -79,6 +73,7 @@ public class StatPrinter
   }
 
 
+  // BIG O CLASSIFICATION: O(n)
   //*************** QUESTION 01 **************************
   //precond:  data.size() > 0
   //postcond: returns largest integer in data
@@ -94,6 +89,7 @@ public class StatPrinter
   }
 
 
+  // BIG O CLASSIFICATION: O(1)
   //*************** QUESTION 03 **************************
   //postcond: returns true if i > 0 and i < _frequency.size() - 1
   //          and _frequency.get( i - 1 ) < _frequency.get( i )
@@ -114,20 +110,35 @@ public class StatPrinter
   }
 
 
+  // BIG O CLASSIFICATION: O(n)
   //*************** QUESTION 04 **************************
   //postcond: returns list of modes in _frequency
   public ArrayList<Integer> getLocalModes()
   {
-    /* YOUR IMPLEMENTATION HERE */
-    return _frequency;
+    ArrayList mombo = new ArrayList<Integer>();
+    for (int i = 0; i < _frequency.size(); i++) {
+      if (isLocalMode(i)) {
+        mombo.add(i);
+      }
+    }
+    return mombo;
   }
 
 
+  // BIG O CLASSIFICATION: O(n^2)
   //*************** QUESTION 05 **************************
   //precond:  longestBar > 0
   public void printHistogram( int longestBar )
   {
-    /* YOUR IMPLEMENTATION HERE */
+    int scale_factor = longestBar / max(_frequency);
+    for (int i = 0; i < _frequency.size(); i++) {
+      System.out.print(i + " : ");
+      for (int j = 0; j < (_frequency.get(i) * scale_factor); j++) {
+        System.out.print("*");
+      }
+      System.out.print("\n");
+    }
+
   }
 
 }//end class StatPrinter

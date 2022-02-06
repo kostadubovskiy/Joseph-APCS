@@ -1,25 +1,26 @@
-Team Phantom Tollbooth (Clyde Sinclair, Fierce Dragon)
-APCS pd0
+Team PAUDUO (Joseph Othman, Lindsay Phung)
+APCS pd7
 L05 -- pulling it together
-2022-02-03r
-time spent:  hrs
+2022-02-07
+time spent: 0.5 hr
 
 
 DISCO
 ------------------------------------------------
-* 
+* One trick to determining big O runtimes is too look for the "largest loop"
+(i.e. for loops inside of other for loops). For iterative algorithms, looking
+at what is being looped through and how it is being looped through is the main
+determining factor of big O runtimes.
 ================================================
 
 
 QCC
 ------------------------------------------------
-* 
+* we consulted the API to refresh our memory of ArrayList methods
 ================================================
 
 
 MISC
 ------------------------------------------------
-* 
+*
 ================================================
-
-
