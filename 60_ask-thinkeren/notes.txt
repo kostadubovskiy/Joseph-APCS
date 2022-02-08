@@ -1,0 +1,32 @@
+DISCO:
+
+Doing this smoothly and efficiently is hard.
+
+No person should be looking at anything but the two top cards in each of their
+hands.
+
+QCC:
+
+What is the time complexity evaluation of this algorithm? Is this faster than
+our previous sorts (bubble sort, selection sort, insertion sort)?
+
+How will we code this? Separating existing arraylists into 2 different parts
+seems costly intuitively.
+
+Thinker Firmware:
+
+ALGO:
+1. If you have more than 2 cards, divide them into (roughly) 2 equal piles.
+2. Give each of those piles to a different person with no cards.
+3. Hold hands out until you receive cards.
+4. If you have 1 card, then return to the person who gave it to you.
+5. To the person who just received cards from the people they gave it to, use
+the merging algorithm (described below) to sort the cards. Then, return them
+to the person you got them from.
+6. Continue this until Mr. Mykolyk receives two sorted piles.
+
+
+Merging Algo:
+Look at the first elements in each of the 2 lists. Whichever is lower, put
+that element in the new shared list. Then remove it from it's old list.
+Repeat until both original lists you received are completely empty.
