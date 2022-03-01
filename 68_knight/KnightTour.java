@@ -84,24 +84,35 @@ class TourFinder
   //instance vars
   private int[][] _board;
   private int _sideLength; //board has dimensions n x n
-  private boolean _solved = ???
+  private boolean _solved = false;
 
   //constructor -- build board of size n x n
   public TourFinder( int n )
   {
-    _sideLength = ???
+    _sideLength = n;
 
     //init 2D array to represent square board with moat
-    _board =
+    _board = new int[n+4][n+4];
 
     //SETUP BOARD --  0 for unvisited cell
     //               -1 for cell in moat
     //---------------------------------------------------------
-    ???
+    for(int i = 0; i < n+4; i++) {
+      // For moat rows
+      _board[0][i] = -1;
+      _board[1][i] = -1;
+      _board[n+2][i] = -1;
+      _board[n+3][i] = -1;
+      // For moat columns
+      _board[i][0] = -1;
+      _board[i][1] = -1;
+      _board[i][n+2] = -1;
+      _board[i][n+3] = -1;
+    }
     //---------------------------------------------------------
 
   }//end constructor
-
+_solved
 
   /**
    * "stringify" the board
@@ -150,16 +161,16 @@ class TourFinder
     //delay(50); //slow it down enough to be followable
 
     //if a tour has been completed, stop animation
-    if ( ??? ) System.exit(0);
+    if ( _solved ) System.exit(0);
 
     //primary base case: tour completed
-    if ( ??? ) {
-      ???
+    if ( moves = n^2 + 1 ) {
+      // ???
       System.out.println( this ); //refresh screen
       return;
     }
     //other base case: stepped off board or onto visited cell
-    if ( ??? ) {
+    if ( _board[x][y] != 0 ) {
       return;
     }
     //otherwise, mark current location
