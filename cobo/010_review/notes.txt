@@ -1,0 +1,7 @@
+DISCO
+-- Csv files are very useful and don't slow down the code at all
+-- Scanners are heavily required when deciphering test from separate file
+QCC
+
+- how was this data on how positive/negative a word is obtained?
+- should we a have a required format or are we making entirely new sentences in the upcoming lab
