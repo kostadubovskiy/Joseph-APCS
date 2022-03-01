@@ -1,8 +1,9 @@
-// Clyde Sinclair
-// APCS pd0
+// Pautrio
+// Joseph Othman, Lindsay Phung, Oscar Breen
+// APCS pd7
 // HW68 -- recursively probing for a closed cycle
 // 2022-02-28m
-// time spent:  hrs
+// time spent:  0.5 hrs
 
 /***
  * SKELETON
@@ -64,8 +65,8 @@ public class KnightTour
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //for random starting location, use lines below:
-    //int startX = //YOUR MATH CONSTRUCT FOR GENERATING A RANDOM LEGAL X VALUE
-    //int startY = //YOUR MATH CONSTRUCT FOR GENERATING A RANDOM LEGAL X VALUE
+    int startX = (int)(n * Math.random());
+    int startY = (int)(n * Math.random());
     //tf.findTour( startX, startY, 1 );   // 1 or 0 ?
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -112,7 +113,6 @@ class TourFinder
     //---------------------------------------------------------
 
   }//end constructor
-_solved
 
   /**
    * "stringify" the board
@@ -164,7 +164,7 @@ _solved
     if ( _solved ) System.exit(0);
 
     //primary base case: tour completed
-    if ( moves = n^2 + 1 ) {
+    if ( moves == (_board[0].length)*(_board[0].length) + 1 ) {
       // ???
       System.out.println( this ); //refresh screen
       return;
@@ -178,7 +178,7 @@ _solved
     else {
 
       //mark current cell with current move number
-      _board[x][y] = ???
+      _board[x][y] = moves;
 
       System.out.println( this ); //refresh screen
 
@@ -193,11 +193,18 @@ _solved
        *     g . . . b
        *     . h . a .
       ******************************************/
-      ???
+      findTour(x+1, y+2, moves+1);
+      findTour(x+2, y+1, moves+1);
+      findTour(x+2, y-1, moves+1);
+      findTour(x+1, y-2, moves+1);
+      findTour(x-1, y-2, moves+1);
+      findTour(x-2, y-1, moves+1);
+      findTour(x-2, y+1, moves+1);
+      findTour(x-1, y+2, moves+1);
 
       //If made it this far, path did not lead to tour, so back up...
       // (Overwrite number at this cell with a 0.)
-        ???
+        _board[x][y] = 0;
 
       System.out.println( this ); //refresh screen
     }
