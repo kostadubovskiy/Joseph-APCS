@@ -1,0 +1,7 @@
+- This was hard.
+- Coming up with the idea of recursion on our own seems impossible.
+- Trying to get around the issue of "this doesn't work, how do I remove the last
+queen and keep going" was particularly hard.
+- This recursion feels weird since we started with the base case of working from
+the end state of "all queens are there already!", instead of the base case of "
+nothing is here, what do?"
