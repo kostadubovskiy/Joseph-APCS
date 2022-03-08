@@ -164,7 +164,11 @@ class TourFinder
     if ( _solved ) System.exit(0);
 
     //primary base case: tour completed
+<<<<<<< HEAD
     if ( moves > (_board[0].length - 4)*(_board[0].length - 4) ) {
+=======
+    if ( moves > (_board[0].length-4)*(_board[0].length-4) ) {
+>>>>>>> 5683fdb752b0d1abb842e352a77d615cf4f37b22
       // ???
       _solved = true;
       System.out.println( this ); //refresh screen
