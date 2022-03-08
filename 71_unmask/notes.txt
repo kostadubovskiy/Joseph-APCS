@@ -1,0 +1,7 @@
+* Mysterion appears to be the workings of a sorting algorithm.
+* If the above is true, why/when to use this instead of mergesort?
+* When to make (a,b) not equal to (0,n-1)? Does this tie in to "optimizing?"
+
+* What are hoo and whaH? Where be the clues? (This was in the closet directory,
+and has been removed from this one to abide by the tree as shown on the
+assignments page.)
