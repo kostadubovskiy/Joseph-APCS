@@ -1,0 +1,53 @@
+Joseph Othman
+APCS
+HW69 -- Making Sense
+2022-03-02
+time spent:
+
+Time Measurements:
+Mean execution times for boards of size n*n:
+* n=5   235s    across 5 executions
+* n=6   __s    across __ executions
+* n=7   __s    across __ executions
+* n=8   __s    across __ executions
+
+
+
+q0: From any starting position, can an open tour always be found? Explain.
+  No. There exists a counterexample for any board of size (2k+1) x (2k+1). If both
+  coordinates of the starting location are of different parity, then it will be
+  impossible to find an open tour.
+  Proof: color the board (as in the inside n by n) with alternating black and white
+  squares. The odd by odd squares and even by even squares will be black, while the
+  even by odd and odd by even squares will be white. Note that there is exactly 1 more
+  black square than white square. Then a valid Knight's tour must start on a black square,
+  or else the board will always have >= 1 more uncovered black square than white square.
+  But at the end, the board will have 0 more uncovered black squares than white squares.
+q1: Same, but for closed tour.
+  If the closed tour exists (which is only possible on even by even boards), then
+  it will not matter where the tour starts, since you can take any such tour and
+  let any square be the starting location.
+  Take any closed knight tour with squares numbered in order. Then, let any square
+  be the new starting location. From here, continue as normal, until you reach
+  the final number. Then, jump to number 1 (from, say 64) and continue until you reach
+  the square before your original one in the closed knight tour. This is a new closed
+  tour with a different starting location.
+q2: How do you explain the increase in execution time as n increases?
+
+q3: Thoughts on optimization?
+  - If the board is odd by odd and the starting location is odd by odd, immediately stop.
+  Otherwise, at each step, check if each neighbor has an open square to go to. If there
+  exists a square with each adjacent square being nonzero, then we must immediately
+  backtrack until that square had a neighbor with 0 as the entry. Furthermore, if the move
+  is not the last move, it should have a second neighbor with 0 as the entry, in order
+  to make a second move after entering that square.
+  - Try to find a Knight's tour by using a divide and conquer algorithm. Split the board
+  into sub-boards, and try to chain tours together in a way such that you can jump from
+  the final square of one tour to the starting square of another. Note: This is probably
+  not possible for small cases, and not all knight tours are in this form.
+
+
+How to get out of maze?
+- Use the "rule of rights." Since the maze is (assumed to be) of finite size, then continuously
+turning as far right whenever possible (possible needing to turn left) will allow you to escape
+the maze... eventually.
