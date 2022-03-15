@@ -1,3 +1,11 @@
+/**
+Team PJOLLN: Neil Lin, Lior Polischouk, Joseph Othman
+APCS pd7
+HW75 -- Nodal Recall
+2022-03-13w
+time spent: 0.5 h
+**/
+
 /***
  * class LLNode
  * Implements a node, for use in lists and other container classes.
