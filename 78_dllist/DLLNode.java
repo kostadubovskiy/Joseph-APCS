@@ -58,13 +58,13 @@ public class DLLNode
 	//Below is an exercise in creating a linked list...
 
 	//Create a node
-	DLLNode first = new DLLNode( "cat", null );
+	// DLLNode first = new DLLNode( "cat", null );
 
-	//Create a new node after the first
-	first.setNext( new DLLNode( "dog", null ) );
+	// //Create a new node after the first
+	// first.setNext( new DLLNode( "dog", null ) );
 
-	//Create a third node after the second
-	first.getNext().setNext( new DLLNode( "cow", null ) );
+	// //Create a third node after the second
+	// first.getNext().setNext( new DLLNode( "cow", null ) );
 
 	/* A naive list traversal, has side effects.... ??
 	   while( first != null ) {
