@@ -1,3 +1,40 @@
+/**
+Team PJOLLN: Neil Lin, Lior Polischouk, Joseph Othman
+APCS pd7
+HW78 -- Double Up
+2022-03-15
+time spent: 0.7 h
+KTS Used: 4
+
+DISCO:
+- Methods are basically the same, except now we have to account for the fact
+that there are also points to previous nodes that must be updated during the
+addition and removal methods.
+QCC:
+- How does being able to go backwards in a DLL help us more?
+- Why make a DLL instead of another LL that just reverses the original LL (is this
+  easier?)?
+ALGO ADD:
+- Create a new node with parameters (newVal, null).
+- if adding at index 0 or _size - 1, setNext of newNode to be head (tail), then
+  setPrev of head (tail) to be new node, then set head (tail) = newNode.
+- Otherwise, traverse through existing LL until reach the node at index (i-1).
+- setNext of the new Node to be the node currently at index i.
+- setNext of the node currently at index (i-1) to be the new node.
+- increase the size accordingly.
+-
+ALGO REM:
+- If removing at index 0, set tmp = _head.getNext(). Then set head = tmp, then
+  setPrev(head) = null, and return cargo of temp.
+- If removing at index _size - 1, set tmp = _tail.getPrev(). Then set tail = tmp,
+  setNext(tail) = null, and return cargo of temp.
+- Traverse through the LL until we reach the node at index (i-1).
+- Create a temp storge node of the node currently at index i.
+- setNext of the node at index (i-1) to be the node currently at index (i+1).
+- decrease the size accordingly.
+- return the cargo of the temp storage node.
+*/
+
 /*****************************************************
  * class LList
  * Implements a linked list of LLNodes, each containing String data
