@@ -33,10 +33,17 @@ public class Deck {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 		for(String cardRank : ranks) {
 			for(String cardSuit : suits) {
-				
 			}
 		}
+		for (int ind = 0; ind < values.length(); ind ++) {
+			for(String suit : suits) {
+				Deck += C
+			}
+			Card currCard = new Card(ranks[ind % ranks.length()], suits[ind % suits.length()], values[ind]);
+		}
 	}
+
+	deck ONe = new Deck("four", "spades", 3)
 
 
 	/**
